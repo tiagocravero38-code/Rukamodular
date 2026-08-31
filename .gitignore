@@ -1,0 +1,11 @@
+# Configuraciones del editor de código
+.vscode/
+
+# Archivos ocultos del sistema operativo (Mac/Windows)
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Por si en el futuro agregás Node.js o librerías externas
+node_modules/
+package-lock.json

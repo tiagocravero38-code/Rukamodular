@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruka Modular</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Íconos FontAwesome (para el WhatsApp, el menú hamburguesa y las flechas) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 1. BARRA DE NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-cube"></i></div>
+            <span class="logo-text">RUKA</span>
+        </div>
+        
+        <nav class="nav-menu" id="nav-menu">
+            <a href="#" data-i18n="nav-modules">Módulos</a>
+            <a href="#nosotros" data-i18n="nav-about">Nosotros</a>
+            <a href="#contacto" data-i18n="nav-contact">Contacto</a>
+            <a href="#consultas" data-i18n="nav-queries">Consultas</a>
+            
+            <!-- Selector de Idioma -->
+            <div class="lang-selector">
+                <button class="lang-btn" id="lang-btn">
+                    <img src="https://flagcdn.com/w20/ar.png" alt="ES" class="flag" id="current-flag"> 
+                    <span id="current-lang">Spanish</span> 
+                    <i class="fas fa-chevron-down text-small"></i>
+                </button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <a href="#" class="lang-option" data-lang="English" data-flag="us.png" data-alt="EN">
+                        <img src="https://flagcdn.com/w20/us.png" alt="EN" class="flag"> English
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Botón menú hamburguesa (solo visible en celular) -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- 2. BANNER DE TEXTO INTRODUCTORIO -->
+    <section class="intro-banner">
+        <div class="intro-left">
+            <h1 data-i18n="intro-title">DISEÑO Y CONSTRUCCIÓN DE <br> ARQUITECTURA MODULAR</h1>
+        </div>
+        <div class="intro-right">
+            <p data-i18n="intro-desc">En RUKA MODULAR, diseñamos y producimos módulos habitables versátiles, transportables y eficientes, pensados para experiencias turísticas, inversión inmobiliaria, vivienda permanente o ampliaciones rápidas. Hacemos arquitectura responsable, que privilegia la calidad del espacio, el diseño minimalista y el respeto por el entorno.</p>
+            
+            <a href="#" class="intro-link">
+                <span data-i18n="intro-link">Conocé nuestros módulos</span> 
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 3. IMAGEN PRINCIPAL (HERO) -->
+    <main class="hero">
+        <button class="slider-arrow right-arrow">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </main>
+
+    <!-- 4. BARRA INFERIOR (TÍTULO) -->
+    <section class="bottom-bar">
+        <h2 data-i18n="bottom-text">SE ADAPTA A VOS</h2>
+    </section>
+
+    <!-- 5. GALERÍA DE 4 IMÁGENES -->
+    <section class="image-gallery">
+        <!-- IMPORTANTE: Cambiá estos src por tus fotos reales -->
+        <div class="gallery-item">
+            <img src="../imagenes/2imagen.png" alt="Módulo frente">
+        </div>
+        <div class="gallery-item">
+            <img src="../imagenes/3imagen.png" alt="Dormitorio">
+        </div>
+        <div class="gallery-item">
+            <img src="../imagenes/4imagen.png" alt="Módulo lateral">
+        </div>
+        <div class="gallery-item">
+            <img src="../imagenes/5imagen.png" alt="Interior">
+        </div>
+    </section>
+
+    <!-- 6. SECCIÓN DE INFORMACIÓN: RUKA MONOAMBIENTE -->
+    <section class="product-info-section">
+        <div class="product-info-content">
+            <h2 data-i18n="mono-title">RUKA MONOAMBIENTE</h2>
+            
+            <p class="description" data-i18n="mono-desc">
+                Pensado para quienes buscan una solución compacta, funcional y estética, sin resignar confort ni calidad constructiva. Ideal para turismo, uso residencial temporal o permanente, estudios, oficinas o espacios de retiro.
+            </p>
+            
+            <p class="virtual-tour-text" data-i18n="mono-tour-text">Ingresá al recorrido virtual:</p>
+            
+            <!-- Es un enlace funcional, si hacés clic te lleva a kuula.co -->
+            <a href="https://kuula.co/post/n1/collection/7Mphk" target="_blank" rel="noopener noreferrer" class="virtual-tour-link">
+                kuula.co/post/n1/collection/7Mphk
+            </a>
+            
+            <p class="price" data-i18n="mono-price">Desde U$D 26.900 + IVA</p>
+        </div>
+        
+        <!-- Botón para subir (Scroll to top) que se ve a la derecha -->
+        <button class="scroll-to-top" id="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </section>
+
+    <!-- 7. SEGUNDA GALERÍA DE IMÁGENES -->
+    <section class="image-gallery">
+        <!-- Reemplazá con los nombres de tus 4 nuevas imágenes -->
+        <div class="gallery-item">
+            <img src="../imagenes/6imagen.png" alt="Módulo exterior">
+        </div>
+        <div class="gallery-item">
+            <img src="../imagenes/7imagen.png" alt="Dormitorio interior">
+        </div>
+        <div class="gallery-item">
+            <img src="../imagenes/8imagen.png" alt="Módulo con galería">
+        </div>
+        <div class="gallery-item">
+            <img src="../imagenes/9imagen.png" alt="Cocina">
+        </div>
+    </section>
+
+    <!-- 8. SECCIÓN DE INFORMACIÓN: RUKA I DORMITORIO -->
+    <section class="product-info-section">
+        <div class="product-info-content">
+            <h2 data-i18n="dor-title">RUKA I DORMITORIO</h2>
+            
+            <p class="description" data-i18n="dor-desc">
+                Propone una forma de habitar simple y eficiente, separando claramente las áreas públicas y privadas, sin perder la relación con el entorno. Un refugio contemporáneo, cálido y funcional.
+            </p>
+            
+            <p class="virtual-tour-text" data-i18n="dor-tour-text">Ingresá al recorrido virtual:</p>
+            
+            <a href="https://kuula.co/post/LhdTk/collection/7Mphw" target="_blank" rel="noopener noreferrer" class="virtual-tour-link">
+                kuula.co/post/LhdTk/collection/7Mphw
+            </a>
+            
+            <p class="price" data-i18n="dor-price">Desde U$D 37.900 + IVA</p>
+        </div>
+        
+        <!-- Botón para subir de esta sección (reutilizamos la clase y la funcionalidad JS se aplicará si cambiamos la forma en que lo seleccionamos) -->
+        <button class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </section>
+
+    <!-- 9. TERCERA GALERÍA DE IMÁGENES -->
+    <section class="image-gallery">
+        <!-- Acordate de cambiar '10imagen.png' y las demás por los nombres reales de tus fotos del quincho -->
+        <div class="gallery-item">
+            <img src="../imagenes/10imagen.png" alt="Quincho vista exterior 1">
+        </div>
+        <div class="gallery-item">
+            <img src="../imagenes/11imagen.png" alt="Quincho interior parrilla">
+        </div>
+        <div class="gallery-item">
+            <img src="../imagenes/12imagen.png" alt="Quincho vista exterior 2">
+        </div>
+        <div class="gallery-item">
+            <img src="../imagenes/13imagen.png" alt="Quincho interior mesa grande">
+        </div>
+    </section>
+
+    <!-- 10. SECCIÓN DE INFORMACIÓN: RUKA QUINCHO -->
+    <section class="product-info-section">
+        <div class="product-info-content">
+            <h2 data-i18n="quincho-title">RUKA QUINCHO</h2>
+            
+            <p class="description" data-i18n="quincho-desc">
+                Un espacio de reunión y disfrute, donde el interior y el exterior se integran de forma natural. Un módulo versátil, funcional y de fuerte identidad, ideal para acompañar viviendas, complejos turísticos o casas de fin de semana.
+            </p>
+            
+            <p class="virtual-tour-text" data-i18n="quincho-tour-text">Ingresá al recorrido virtual:</p>
+            
+            <a href="https://kuula.co/post/LhdCQ/collection/7Mpl_d" target="_blank" rel="noopener noreferrer" class="virtual-tour-link">
+                kuula.co/post/LhdCQ/collection/7Mpl_d
+            </a>
+            
+            <p class="price" data-i18n="quincho-price">Desde U$D 41.900 + IVA</p>
+        </div>
+        
+        <!-- Botón para subir (usamos la misma clase) -->
+        <button class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </section>
+
+        <!-- 11. SECCIÓN: CONOCENOS (NOSOTROS) -->
+    <section class="about-section" id="nosotros">
+        <div class="about-container">
+            
+            <!-- Columna izquierda: Textos -->
+            <div class="about-text">
+                <h2 data-i18n="about-title">CONOCENOS</h2>
+                <h3 data-i18n="about-subtitle">NOSOTROS</h3>
+                
+                <p data-i18n="about-p1">Hola, somos un equipo de profesionales emprendedores con una profunda pasión por la arquitectura y un compromiso con la excelencia. Nos enfocamos en realizar un acompañamiento integral a nuestros clientes, desde la idea hasta la instalación.</p>
+                
+                <p data-i18n="about-p2">Nuestro objetivo es ser una alternativa inteligente, sustentable y accesible en soluciones modulares para habitar, invertir o expandirse, combinando el diseño, la funcionalidad y la conexión con el entorno.</p>
+                
+                <p data-i18n="about-p3">Aspiramos a transformar la manera en que las personas conciben el espacio: más simple, flexible, natural, con estilo y calidad.</p>
+                
+                <h4 data-i18n="about-team">BRUNO, LUIS Y MARIA</h4>
+            </div>
+            
+            <!-- Columna derecha: Imagen del equipo -->
+            <div class="about-image">
+                <!-- Reemplazá '14imagen.png' por el nombre de la foto del equipo -->
+                <img src="../imagenes/ellosimagen.jpg" alt="Equipo Ruka Modular">
+            </div>
+
+        </div>
+
+        <!-- Botón para subir (usamos la misma clase) -->
+        <button class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </section>
+    
+    <!-- 12. SECCIÓN: DETALLES DE LOS INTERIORES (Grilla 2x2) -->
+    <section class="interior-details-section">
+        
+        <!-- Casillero 1: Bloque de texto (Arriba Izquierda) -->
+        <div class="interior-text-block">
+            <!-- Marca de agua de fondo (decorativo) -->
+            <div class="bg-watermark">INTERIORES</div>
+            
+            <h2 data-i18n="interior-title">DETALLES DE LOS INTERIORES</h2>
+            <p data-i18n="interior-subtitle">MATERIALES DE ALTA CALIDAD, TERMINACIONES CUIDADAS, GARANTIZANDO CONFORT, ESTÉTICA Y SEGURIDAD.</p>
+        </div>
+        
+        <!-- Casillero 2: Imagen 1 (Arriba Derecha) -->
+        <div class="interior-image">
+            <img src="../imagenes/14imagen.png" alt="Detalle interior cama">
+        </div>
+        
+        <!-- Casillero 3: Imagen 2 (Abajo Izquierda) -->
+        <div class="interior-image">
+            <img src="../imagenes/15imagen.png" alt="Detalle interior living">
+        </div>
+        
+        <!-- Casillero 4: Imagen 3 (Abajo Derecha) -->
+        <div class="interior-image">
+            <img src="../imagenes/16imagen.png" alt="Detalle interior cocina">
+        </div>
+        
+        <!-- Botón para subir (usamos la misma clase) -->
+        <button class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </section>
+
+    <!-- 13. SECCIÓN: TESTIMONIOS (CARRUSEL AUTOMÁTICO) -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <!-- Comillas gigantes de fondo -->
+            <div class="quote-bg">”</div>
+
+            <!-- Diapositiva 1 -->
+            <div class="testimonial-slide active">
+                <p class="testimonial-subtitle" data-i18n="test-sub-1">"Buscábamos algo simple, rápido y que se integrara al paisaje"</p>
+                <h3 class="testimonial-text" data-i18n="test-text-1">ELEGIMOS RUKA MODULAR PARA INICIAR NUESTRO PROYECTO TURÍSTICO Y FUE UNA GRAN DECISIÓN. EL DISEÑO ES FUNCIONAL, CÁLIDO Y SE ADAPTA PERFECTAMENTE AL ENTORNO NATURAL. VALORAMOS MUCHO EL ACOMPAÑAMIENTO PROFESIONAL EN TODO EL PROCESO, DESDE LA IDEA INICIAL HASTA EL MONTAJE. HOY EL MÓDULO ES UNO DE LOS MÁS ELEGIDOS POR NUESTROS HUÉSPEDES.</h3>
+            </div>
+
+            <!-- Diapositiva 2 -->
+            <div class="testimonial-slide">
+                <p class="testimonial-subtitle" data-i18n="test-sub-2">"Una forma distinta de habitar"</p>
+                <h3 class="testimonial-text" data-i18n="test-text-2">QUERÍAMOS UNA VIVIENDA PEQUEÑA, EFICIENTE Y BIEN DISEÑADA. RUKA NOS OFRECIÓ UNA SOLUCIÓN CLARA, SIN COMPLICACIONES Y CON UNA ESTÉTICA QUE NOS REPRESENTA. EL ESPACIO ESTÁ MUY BIEN APROVECHADO Y SE SIENTE CONFORTABLE TODO EL AÑO. DESTACAMOS LA CALIDAD CONSTRUCTIVA Y LA ATENCIÓN A LOS DETALLES.</h3>
+            </div>
+
+            <!-- Diapositiva 3 -->
+            <div class="testimonial-slide">
+                <p class="testimonial-subtitle" data-i18n="test-sub-3">"Una inversión segura y bien pensada"</p>
+                <h3 class="testimonial-text" data-i18n="test-text-3">APOSTAMOS POR RUKA MODULAR COMO PRIMERA EXPERIENCIA EN ALQUILER TEMPORARIO. LOS TIEMPOS DE ENTREGA FUERON CORTOS Y EL RESULTADO SUPERÓ NUESTRAS EXPECTATIVAS. EL MÓDULO TIENE MUY BUENA ACEPTACIÓN, BAJO MANTENIMIENTO Y UN DISEÑO QUE REALMENTE MARCA LA DIFERENCIA. SIN DUDAS, VOLVERÍAMOS A INVERTIR EN OTRO.</h3>
+            </div>
+
+            <!-- Indicadores (Puntitos) -->
+            <div class="testimonial-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+
+        <!-- Botón para subir -->
+        <button class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </section>
+
+    <!-- 14. BANNER: CONSTRUIMOS TUS SUEÑOS -->
+    <section class="dreams-banner">
+        <h2 data-i18n="dreams-title">CONSTRUIMOS TUS SUEÑOS</h2>
+    </section>
+
+    <!-- 15. SECCIÓN: PREGUNTAS FRECUENTES -->
+    <section class="faq-section" id="consultas">
+        <div class="faq-header">
+            <h2 data-i18n="faq-title">PREGUNTAS FRECUENTES</h2>
+            <p data-i18n="faq-subtitle">Estamos aquí para ayudarte</p>
+        </div>
+
+        <div class="faq-grid">
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="faq-column">
+                
+                <!-- Pregunta 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">?</span>
+                        <h3 data-i18n="faq-q1">¿CON QUÉ SISTEMA CONSTRUCTIVO ESTÁ REALIZADO?</h3>
+                    </div>
+                    <p data-i18n="faq-a1">El módulo se construye con estructura metálica, cerramientos exteriores de chapa o siding, aislaciones térmicas y acústicas adecuadas, y revestimientos interiores en madera o durlock, logrando un equilibrio entre durabilidad, confort y estética.</p>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">?</span>
+                        <h3 data-i18n="faq-q2">¿EL MÓDULO SE PUEDE ADAPTAR O PERSONALIZAR?</h3>
+                    </div>
+                    <p data-i18n="faq-a2">Sí. El diseño puede adaptarse según el terreno, el uso previsto y las necesidades del cliente. Se pueden evaluar cambios en aberturas, terminaciones, equipamiento y disposición interior.</p>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">?</span>
+                        <h3 data-i18n="faq-q3">¿QUÉ NO INCLUYE EL PRECIO DE MI REFUGIO?</h3>
+                    </div>
+                    <p data-i18n="faq-a3">No está incluido el valor del traslado y montaje que se cotiza en función de la localización. Tampoco está incluida la preparación del terreno y de las bases de apoyo o platea, ni la acometida de los servicios de agua, electricidad y de desagüe cloacal hasta el punto de conexión pre-acordado.</p>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <div class="faq-column">
+                
+                <!-- Pregunta 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">?</span>
+                        <h3 data-i18n="faq-q4">¿INCLUYE EL TRASLADO Y EL MONTAJE?</h3>
+                    </div>
+                    <p data-i18n="faq-a4">Sí, ofrecemos el servicio de traslado y montaje en el lugar, coordinando todo el proceso para una instalación rápida y eficiente.</p>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">?</span>
+                        <h3 data-i18n="faq-q5">¿CUÁNTO TIEMPO DEMORA LA ENTREGA?</h3>
+                    </div>
+                    <p data-i18n="faq-a5">Los tiempos varían según el nivel de personalización y la demanda, pero al tratarse de un sistema modular, los plazos son significativamente menores a los de una obra tradicional.</p>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">?</span>
+                        <h3 data-i18n="faq-q6">¿SE PUEDE AMPLIAR EL MÓDULO EN EL FUTURO?</h3>
+                    </div>
+                    <p data-i18n="faq-a6">Sí. El sistema modular permite ampliaciones o la incorporación de nuevos módulos en etapas, adaptándose al crecimiento del proyecto o del emprendimiento turístico.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón para subir -->
+        <button class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </section>
+
+    <!-- 16. BANNER FINAL: CONSTRUIR SIMPLE -->
+    <section class="final-banner">
+        <div class="final-banner-content">
+            <h3 data-i18n="final-banner-title">Construir simple, vivir mejor.</h3>
+            <p data-i18n="final-banner-desc">La arquitectura modular permite construir en menos tiempo, con costos claros y un alto nivel de calidad. Menos obra, menos incertidumbre y más resultados. Ruka Modular es una decisión inteligente para hoy y para el futuro.</p>
+        </div>
+
+        <!-- Botón para subir (usamos la misma clase) -->
+        <button class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </section>
+
+    <!-- 17. SECCIÓN DE CONTACTO -->
+    <section class="contact-section" id="contacto">
+        <div class="contact-box">
+            
+            <!-- Izquierda: Formulario -->
+            <div class="form-wrapper">
+                <h2 data-i18n="contact-title">HABLEMOS DE TU PROYECTO</h2>
+                
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label data-i18n="contact-name">Nombre</label>
+                            <input type="text" placeholder="What's your name? *" required data-i18n-placeholder="contact-ph-name">
+                        </div>
+                        <div class="input-group">
+                            <label data-i18n="contact-email">Email</label>
+                            <input type="email" placeholder="What's your email address? *" required data-i18n-placeholder="contact-ph-email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label data-i18n="contact-phone">Teléfono</label>
+                            <input type="tel" placeholder="What's your phone number?" data-i18n-placeholder="contact-ph-phone">
+                        </div>
+                        <div class="input-group">
+                            <label data-i18n="contact-subject">Asunto</label>
+                            <!-- En la imagen dice "What's your phone number?" en ambos, asumo que es un error de tipeo del diseño original. Lo corregimos a "Subject" -->
+                            <input type="text" placeholder="Subject" data-i18n-placeholder="contact-ph-subject">
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label data-i18n="contact-message">Mensaje</label>
+                        <textarea rows="5" placeholder="Type your message..." required data-i18n-placeholder="contact-ph-message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" data-i18n="contact-submit">ENVIAR</button>
+                </form>
+            </div>
+
+            <!-- Derecha: Redes Sociales -->
+            <div class="social-sidebar">
+                <div class="vertical-line"></div>
+                
+                <!-- Link de Instagram -->
+                <a href="https://www.instagram.com/rukamodular?igsh=MXZlbzFtY2o0NG4zbA%3D%3D" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <!-- Link de Facebook -->
+                <a href="https://web.facebook.com/profile.php?id=61587506507022&sk=directory_work&_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+
+        <!-- Botón para subir -->
+        <button class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </section>
+
+    <!-- 18. FOOTER: PONTE EN CONTACTO -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <h2 data-i18n="footer-title">PONTE EN CONTACTO</h2>
+            
+            <div class="footer-grid">
+                <!-- Columna 1 -->
+                <div class="footer-col">
+                    <i class="fas fa-mobile-alt footer-icon"></i>
+                    <h3 data-i18n="footer-col1-title">CONTACTO</h3>
+                    <p>
+                        <!-- Enlace para mandar email -->
+                        <a href="mailto:rukamodular@gmail.com" class="footer-contact-link">rukamodular@gmail.com</a><br>
+                        <!-- Enlace para llamar -->
+                        <a href="tel:+543512266528" class="footer-contact-link">+54 3512266528</a>
+                    </p>
+                </div>
+                
+                <!-- Columna 2 -->
+                <div class="footer-col">
+                    <i class="far fa-clock footer-icon"></i>
+                    <h3 data-i18n="footer-col2-title">HORARIOS</h3>
+                    <!-- Esto queda igual porque no lleva links -->
+                    <p data-i18n="footer-col2-text">Lunes a Viernes<br>9:00<br>a<br>17:00hs</p>
+                </div>
+                
+                <!-- Columna 3 -->
+                <div class="footer-col">
+                    <i class="fas fa-mobile-alt footer-icon"></i>
+                    <h3 data-i18n="footer-col3-title">CONTACTS</h3>
+                    <p>
+                        <!-- Enlace para mandar email -->
+                        <a href="mailto:brunorukamodular@gmail.com" class="footer-contact-link">brunorukamodular@gmail.com</a><br>
+                        <!-- Enlace para llamar -->
+                        <a href="tel:+543513331760" class="footer-contact-link">+54 3513331760</a>
+                    </p>
+                </div>
+            </div>    
+            <!-- Menú inferior -->
+            <div class="footer-bottom-nav">
+                <!-- Reutilizamos las mismas claves de traducción que usamos en el menú de arriba -->
+                <a href="#" data-i18n="nav-modules">Módulos</a>
+                <a href="#nosotros" data-i18n="nav-about">Nosotros</a>
+                <a href="#contacto" data-i18n="nav-contact">Contacto</a>
+                <a href="#consultas" data-i18n="nav-queries">Consultas</a>
+            </div>
+        </div>
+
+        <!-- Botón para subir -->
+        <button class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </footer>
+
+    <!-- 19. WIDGET DE WHATSAPP -->
+    <div class="whatsapp-widget-container">
+        
+        <!-- La ventana del chat (oculta por defecto) -->
+        <div class="whatsapp-chat-box" id="whatsapp-chat">
+            
+            <!-- Cabecera verde -->
+            <div class="whatsapp-header">
+                <div class="whatsapp-profile">
+                    <!-- Podés cambiar la imagen por tu logo real -->
+                    <img src="../imagenes/icono.png" alt="Ruka Modular" class="whatsapp-avatar">
+                    <div class="whatsapp-info">
+                        <span class="whatsapp-name">María</span>
+                        <span class="whatsapp-status">Atención 24hs.</span>
+                    </div>
+                </div>
+                <button class="whatsapp-close" id="whatsapp-close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <!-- Cuerpo del chat -->
+            <div class="whatsapp-body">
+                <div class="whatsapp-message">
+                    <span class="whatsapp-message-name">María</span>
+                    <p data-i18n="wa-message">Hola ¿Cómo puedo ayudarte?</p>
+                    <span class="whatsapp-time">21:30</span>
+                </div>
+            </div>
+            
+            <!-- Botón de enviar (redirige a la API) -->
+            <div class="whatsapp-footer">
+                <!-- ACÁ ESTÁ EL LINK CON TU NÚMERO -->
+                <a href="https://api.whatsapp.com/send?phone=543513873411" target="_blank" rel="noopener noreferrer" class="whatsapp-send-btn">
+                    <i class="fab fa-whatsapp"></i> ENVIAR
+                </a>
+            </div>
+        </div>
+
+        <!-- El botón flotante redondito que está siempre visible -->
+        <button class="whatsapp-trigger-btn" id="whatsapp-trigger-btn">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <script src="../backend/app.js"></script>
+</body>
+</html>

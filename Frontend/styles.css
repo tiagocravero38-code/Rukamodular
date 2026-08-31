@@ -1,0 +1,1279 @@
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- AL PRINCIPIO DEL ARCHIVO CSS --- */
+html {
+    /* Hace que todos los saltos internos de la página sean suaves */
+    scroll-behavior: smooth; 
+}
+
+body {
+    background-color: #2a2a2e; /* Fondo oscuro base */
+    overflow-x: hidden;
+    padding-top: 90px; /* IMPORTANTE: Da espacio al navbar fijo para que no tape el contenido */
+}
+
+/* --- REGLA GLOBAL PARA IMÁGENES RESPONSIVAS --- */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Evita que la imagen se estire o se deforme */
+    display: block;
+}
+
+/* --- 1. NAVBAR (ESTADO INICIAL) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #232325;
+    padding: 1.5rem 5%;
+    color: #ffffff;
+    
+    /* Fijar la barra arriba */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    
+    /* Transición fluida para el efecto de scroll */
+    transition: padding 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+    margin-bottom: 2px;
+    transition: font-size 0.4s ease;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    transition: font-size 0.4s ease;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ffffff;
+}
+
+/* --- ESTADO DEL NAVBAR AL HACER SCROLL (Activado por JS) --- */
+.navbar.scrolled {
+    padding: 0.5rem 5%;
+    background-color: rgba(35, 35, 37, 0.98);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.navbar.scrolled .logo-icon { font-size: 1.2rem; }
+.navbar.scrolled .logo-text { font-size: 1rem; }
+
+/* Selector de Idiomas */
+.lang-selector {
+    position: relative;
+    margin-left: 1rem;
+}
+
+.lang-btn {
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.flag { width: 20px; height: auto; }
+
+.lang-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2a2a2e;
+    min-width: 120px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    margin-top: 10px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.lang-dropdown.show { display: block; }
+
+.lang-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    color: white;
+}
+
+.lang-dropdown a:hover { background-color: #3f3f46; }
+
+/* --- 2. BANNER DE TEXTO INTRODUCTORIO --- */
+.intro-banner {
+    display: flex;
+    background-color: #232325;
+    color: white;
+    padding: 4rem 5%;
+    border-top: 1px solid #333;
+}
+
+.intro-left {
+    flex: 1.2;
+    padding-right: 3rem;
+}
+
+.intro-left h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.intro-right {
+    flex: 1;
+    padding-left: 3rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-right p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #cccccc;
+    font-weight: 300;
+}
+
+.intro-link {
+    color: #e5a93d; 
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.intro-link:hover { color: #ffd173; }
+
+/* --- 3. IMAGEN PRINCIPAL (HERO) --- */
+.hero {
+    /* AGREGAR TU FOTO ACÁ */
+    background-image: url('../imagenes/1imagen.png'); 
+    background-color: #555; 
+    background-size: cover;
+    background-position: center;
+    height: 70vh; /* Ocupa el 70% del alto de la pantalla */
+    position: relative;
+}
+
+.slider-arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    display: none; 
+}
+
+/* --- 4. BARRA INFERIOR --- */
+.bottom-bar {
+    background-color: #232325;
+    padding: 1.5rem 5%;
+    color: white;
+}
+
+.bottom-bar h2 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- 5. GALERÍA DE 4 IMÁGENES --- */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0; 
+    width: 100%;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 45vh; 
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block; 
+}
+
+/* --- 6. SECCIÓN DE INFORMACIÓN DEL PRODUCTO --- */
+.product-info-section {
+    background-color: #2a2a2e; /* El mismo fondo oscuro general */
+    padding: 6rem 5%;
+    position: relative; /* Necesario para ubicar el botón de subir a la derecha */
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Separador muy sutil abajo */
+}
+
+.product-info-content {
+    max-width: 800px; /* Evita que el texto se estire de punta a punta en monitores grandes */
+    text-align: center;
+    color: white;
+}
+
+.product-info-content h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.product-info-content .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+.product-info-content .virtual-tour-text {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.product-info-content .virtual-tour-link {
+    display: inline-block;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+    transition: color 0.3s;
+}
+
+.product-info-content .virtual-tour-link:hover {
+    color: #e5a93d; /* Cambia al color dorado que usamos antes al pasar el mouse */
+}
+
+.product-info-content .price {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Botón flotante para volver arriba (flecha) */
+.scroll-to-top {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #333;
+    border: none;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-50%) scale(1.1); /* Efecto hover */
+}
+
+/* En celulares, ocultamos el botón de volver arriba para que no estorbe */
+@media (max-width: 768px) {
+    .product-info-section {
+        padding: 4rem 5%;
+    }
+    .scroll-to-top {
+        display: none;
+    }
+    .product-info-content h2 {
+        font-size: 1.8rem;
+    }
+}
+/* --- 7. SECCIÓN NOSOTROS (CONOCENOS) --- */
+.about-section {
+    background-color: #2a2a2e;
+    padding: 6rem 5%;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    scroll-margin-top: 80px; /* Ajusta el margen superior para el anclaje */
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
+    display: flex;
+    align-items: center; /* Centra verticalmente la foto y el texto */
+    gap: 4rem; /* Espacio entre el texto y la foto */
+}
+
+/* Columna de texto */
+.about-text {
+    flex: 1;
+    color: white;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.about-text h3 {
+    color: #e5a93d; /* Amarillo/Dorado */
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.about-text h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+/* Columna de la foto */
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Pasa la foto a blanco y negro */
+    filter: grayscale(100%); 
+}
+
+/* --- RESPONSIVE PARA "NOSOTROS" --- */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column; /* Apila el texto arriba y la foto abajo */
+        gap: 2rem;
+    }
+}
+
+/* --- 8. DETALLES DE LOS INTERIORES --- */
+.interior-details-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas del mismo ancho */
+    position: relative;
+}
+
+.interior-text-block {
+    background-color: #c48b55; /* Color marrón claro / mostaza del fondo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 10%;
+    color: white;
+    position: relative;
+    overflow: hidden; /* Para que la marca de agua gigante no se salga del borde */
+}
+
+.interior-text-block h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2; /* Para que el texto quede por encima de la marca de agua */
+}
+
+.interior-text-block p {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+}
+
+/* Efecto del texto gigante transparente de fondo */
+.bg-watermark {
+    position: absolute;
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.15); /* Blanco muy transparente */
+    z-index: 1;
+    white-space: nowrap;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Para que no interfiera si alguien intenta seleccionar texto */
+}
+
+.interior-image {
+    width: 100%;
+    height: 50vh; /* Ajustá esto (ej: 40vh o 60vh) según qué tan altas quieras las fotos */
+}
+
+.interior-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que la foto no se deforme */
+    display: block;
+}
+
+/* --- RESPONSIVE PARA DETALLES DE INTERIORES --- */
+@media (max-width: 900px) {
+    .interior-details-section {
+        grid-template-columns: 1fr; /* En celular pasa a 1 sola columna (se apila todo) */
+    }
+    .interior-text-block {
+        height: 40vh; /* Altura fija para el texto en celular */
+        padding: 2rem 5%;
+    }
+    .bg-watermark {
+        font-size: 3.5rem; /* Achicamos la marca de agua para que entre */
+    }
+}
+
+/* --- 9. SECCIÓN DE TESTIMONIOS (CARRUSEL) --- */
+.testimonials-section {
+    background-color: #232325; /* Fondo oscuro un poco distinto al base para separar */
+    padding: 6rem 5%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.testimonials-container {
+    max-width: 900px;
+    text-align: center;
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* Comillas gigantes de fondo */
+.quote-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25rem;
+    font-family: serif;
+    color: rgba(196, 139, 85, 0.15); /* Color mostaza muy transparente */
+    z-index: 1;
+    pointer-events: none;
+    line-height: 0;
+}
+
+/* Diapositivas (ocultas por defecto) */
+.testimonial-slide {
+    display: none;
+    position: relative;
+    z-index: 2;
+    animation: fadeEffect 1s ease-in-out; /* Efecto suave de transición */
+}
+
+/* Solo se muestra la diapositiva activa */
+.testimonial-slide.active {
+    display: block;
+}
+
+/* Animación para que no cambie de golpe */
+@keyframes fadeEffect {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.testimonial-subtitle {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.testimonial-text {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.6;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Puntitos indicadores */
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #555; /* Color del punto inactivo */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #e5a93d; /* Color amarillo/mostaza para el punto activo */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .quote-bg {
+        font-size: 15rem; /* Achicamos las comillas en celular */
+    }
+    .testimonial-text {
+        font-size: 1.1rem; /* Achicamos el texto en celular */
+    }
+}
+
+/* --- 10. BANNER: CONSTRUIMOS TUS SUEÑOS --- */
+.dreams-banner {
+    /* Cambiá '18imagen.jpg' por la foto de la familia */
+    background-image: url('../imagenes/imagenfamilia.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Oscurecemos un poquito la foto de fondo para que el texto se lea bien */
+.dreams-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dreams-banner h2 {
+    position: relative;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 800;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- 11. SECCIÓN PREGUNTAS FRECUENTES (FAQ) --- */
+.faq-section {
+    background-color: #2a2a2e;
+    padding: 6rem 5%;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    scroll-margin-top: 80px; /* Para el enlace del menú */
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.faq-header h2 {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.faq-header p {
+    color: #e5a93d; /* Amarillo/Dorado */
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 2.5rem;
+}
+
+.faq-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.faq-icon {
+    background-color: #e5a93d;
+    color: black;
+    font-weight: 900;
+    min-width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 2px; /* Alineación óptica con el texto */
+}
+
+.faq-question h3 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.faq-item p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Responsive para FAQ */
+@media (max-width: 900px) {
+    .faq-grid {
+        grid-template-columns: 1fr; /* Una sola columna en celulares */
+        gap: 0;
+    }
+    .dreams-banner h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+/* --- 12. BANNER FINAL: CONSTRUIR SIMPLE --- */
+.final-banner {
+    /* Cambiá '19imagen.jpg' por la foto del complejo de noche */
+    background-image: url('../imagenes/fondo casa.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto Parallax opcional, queda muy bien */
+    height: 60vh; /* Ajustá la altura según prefieras */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 5%;
+}
+
+.final-banner-content {
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco translúcido */
+    padding: 3rem 4rem;
+    text-align: center;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.final-banner-content h3 {
+    color: #333;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.final-banner-content p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .final-banner-content {
+        padding: 2rem;
+    }
+    .final-banner-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- 13. SECCIÓN DE CONTACTO --- */
+.contact-section {
+    background-color: #2a2a2e;
+    padding: 6rem 5%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    scroll-margin-top: 80px; /* Para que el navbar no lo tape */
+}
+
+.contact-box {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    padding: 4rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.form-wrapper {
+    flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+.form-wrapper h2 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.input-group label {
+    color: white;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input, 
+.input-group textarea {
+    padding: 12px 15px;
+    border: none;
+    background-color: white;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: #333;
+    outline: none;
+}
+
+.input-group textarea {
+    resize: vertical; /* Permite estirar el cuadro solo hacia abajo */
+}
+
+/* Color del placeholder (texto gris de fondo en los inputs) */
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #a0a0a0;
+}
+
+.submit-btn {
+    background-color: #e5a93d; /* Amarillo/Mostaza */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 700;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #c48b55;
+}
+
+/* Redes Sociales Laterales */
+.social-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Alinea los íconos hacia abajo */
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.vertical-line {
+    width: 1px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #e5a93d;
+}
+
+/* --- RESPONSIVE CONTACTO --- */
+@media (max-width: 768px) {
+    .contact-box {
+        flex-direction: column; /* Apila formulario y redes */
+        padding: 2rem;
+    }
+    .form-row {
+        flex-direction: column; /* Apila los inputs en una columna */
+        gap: 1.5rem;
+    }
+    .social-sidebar {
+        flex-direction: row; /* Pone los iconos en horizontal */
+        justify-content: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .vertical-line {
+        display: none; /* Oculta la línea en celulares */
+    }
+}
+
+/* --- 14. FOOTER (PONTE EN CONTACTO) --- */
+.footer-section {
+    background-color: #252528; /* Un gris apenitas distinto para separar visualmente */
+    padding: 6rem 5% 3rem; 
+    position: relative;
+    text-align: center;
+}
+
+.footer-content h2 {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: center;
+    gap: 8rem; /* Espacio grande entre las 3 columnas */
+    margin-bottom: 6rem;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Íconos de celular y reloj */
+.footer-icon {
+    color: #e5a93d; /* Amarillo/Mostaza */
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-col h3 {
+    color: #e5a93d;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-col p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* Menú inferior (textos chiquitos de abajo) */
+.footer-bottom-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-bottom-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.footer-bottom-nav a:hover {
+    color: #e5a93d;
+}
+
+/* --- RESPONSIVE FOOTER --- */
+@media (max-width: 900px) {
+    .footer-grid {
+        flex-direction: column; /* Apila las 3 columnas en vertical */
+        gap: 4rem;
+    }
+    .footer-bottom-nav {
+        flex-direction: column; /* Apila el menú inferior */
+        gap: 1rem;
+    }
+}
+
+/* --- . BOTÓN WHATSAPP --- */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    text-decoration: none;
+}
+
+/* --- . RESPONSIVE (CELULARES Y TABLETS) --- */
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    /* Galería pasa a 2 columnas en tablets */
+    .image-gallery { grid-template-columns: repeat(2, 1fr); }
+    .intro-left h1 { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    /* Menú Hamburguesa */
+    .mobile-menu-btn { display: block; }
+    
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #232325;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out; 
+    }
+    .nav-menu.active { max-height: 400px; }
+    
+    .nav-menu a, .lang-selector {
+        width: 100%;
+        padding: 15px 5%;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .lang-selector { margin-left: 0; }
+
+    /* Textos Apilados */
+    .intro-banner {
+        flex-direction: column;
+        padding: 3rem 5%;
+    }
+    .intro-left { padding-right: 0; margin-bottom: 2rem; }
+    .intro-left h1 { font-size: 2.5rem; }
+    
+    .intro-right {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 2rem;
+    }
+
+    /* Galería a 1 columna en celular */
+    .image-gallery { grid-template-columns: 1fr; }
+    .gallery-item { height: 50vh; }
+}
+/* --- CORRECCIÓN SELECTOR DE IDIOMA EN CELULARES --- */
+@media (max-width: 768px) {
+    .lang-dropdown {
+        position: relative; /* Hace que no "flote" sino que empuje el contenido */
+        top: 0;
+        box-shadow: none;
+        background-color: transparent;
+        margin-top: 10px;
+        padding-left: 1rem; /* Lo indenta un poquito para que quede prolijo */
+    }
+
+    /* Le damos un poco más de alto al menú desplegado para que entre todo cómodo */
+    .nav-menu.active {
+        max-height: 600px; 
+    }
+}
+
+/* --- CORRECCIÓN DE LA GALERÍA PARA CELULARES Y TABLETS --- */
+@media (max-width: 900px) {
+    .image-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* En tablet: 2 columnas y 2 filas */
+        gap: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .image-gallery {
+        grid-template-columns: 1fr; /* En celular: 1 sola columna (una foto arriba de la otra) */
+    }
+    
+    /* Si tenías una imagen principal (hero), le ajustamos el alto */
+    .hero {
+        height: 50vh; 
+    }
+}
+/* --- 15. WIDGET DE WHATSAPP --- */
+.whatsapp-widget-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* El botón redondo verde */
+.whatsapp-trigger-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.whatsapp-trigger-btn:hover {
+    transform: scale(1.1);
+}
+
+/* La ventana del chat */
+.whatsapp-chat-box {
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: none; /* Oculta por defecto */
+    flex-direction: column;
+    animation: slideUp 0.3s ease-out;
+}
+
+/* Cuando se le agrega esta clase por JS, se muestra */
+.whatsapp-chat-box.show {
+    display: flex;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cabecera verde oscuro */
+.whatsapp-header {
+    background-color: #0b5e54;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.whatsapp-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.whatsapp-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    object-fit: cover;
+}
+
+.whatsapp-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.whatsapp-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.whatsapp-status {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.whatsapp-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Cuerpo con el fondo típico de WhatsApp */
+.whatsapp-body {
+    background-color: #e5ddd5;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    padding: 20px;
+    height: 200px;
+}
+
+.whatsapp-message {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 0 10px 10px 10px;
+    display: inline-block;
+    max-width: 90%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* La colita del globo de diálogo */
+.whatsapp-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    border-style: solid;
+    border-width: 0 15px 15px 0;
+    border-color: transparent #ffffff transparent transparent;
+}
+
+.whatsapp-message-name {
+    display: block;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.whatsapp-message p {
+    color: #333;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.whatsapp-time {
+    display: block;
+    text-align: right;
+    font-size: 0.7rem;
+    color: #999;
+}
+
+/* Botón inferior */
+.whatsapp-footer {
+    padding: 15px;
+    background-color: white;
+}
+
+.whatsapp-send-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-send-btn:hover {
+    background-color: #1ebc5a;
+}
+
+/* Estilos para los links de contacto en el footer */
+.footer-contact-link {
+    color: #e0e0e0; /* Color gris claro original */
+    text-decoration: none; /* Le saca el subrayado */
+    transition: color 0.3s ease;
+}
+
+.footer-contact-link:hover {
+    color: #e5a93d; /* Se pone amarillo/mostaza al pasar el mouse */
+}
