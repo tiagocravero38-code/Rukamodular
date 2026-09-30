@@ -191,7 +191,7 @@ img {
 /* --- 3. IMAGEN PRINCIPAL (HERO) --- */
 .hero {
     /* AGREGAR TU FOTO ACÁ */
-    background-image: url('../imagenes/1imagen.png'); 
+    background-image: url('imagenes/1imagen.png'); 
     background-color: #555; 
     background-size: cover;
     background-position: center;
@@ -592,7 +592,7 @@ img {
 /* --- 10. BANNER: CONSTRUIMOS TUS SUEÑOS --- */
 .dreams-banner {
     /* Cambiá '18imagen.jpg' por la foto de la familia */
-    background-image: url('../imagenes/imagenfamilia.jpg'); 
+    background-image: url('imagenes/imagenfamilia.jpg'); 
     background-size: cover;
     background-position: center;
     height: 35vh;
@@ -710,7 +710,7 @@ img {
 /* --- 12. BANNER FINAL: CONSTRUIR SIMPLE --- */
 .final-banner {
     /* Cambiá '19imagen.jpg' por la foto del complejo de noche */
-    background-image: url('../imagenes/fondo casa.jpg'); 
+    background-image: url('imagenes/fondo casa.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efecto Parallax opcional, queda muy bien */
