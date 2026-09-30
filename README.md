@@ -22,4 +22,8 @@ Una *Landing Page* institucional tipo *One Page* desarrollada a medida para **Ru
 * **JavaScript (Vanilla ES6):** Manipulación del DOM, *Event Listeners*, *Timers* (setInterval/clearInterval) y lógica de estado sin uso de librerías externas.
 
 ## 💻 Instalación y Uso Local
+Al ser un proyecto estático puro, no requiere instalación de dependencias ni un entorno complejo.
 
+1. Clonar el repositorio:
+   ```bash
+   git clone [https://github.com/TU_USUARIO/ruka-modular.git](https://github.com/TU_USUARIO/ruka-modular.git)
