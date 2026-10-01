@@ -401,37 +401,41 @@
             <div class="form-wrapper">
                 <h2 data-i18n="contact-title">HABLEMOS DE TU PROYECTO</h2>
                 
-                <form action="#" method="POST" class="contact-form">
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label data-i18n="contact-name">Nombre</label>
-                            <input type="text" placeholder="What's your name? *" required data-i18n-placeholder="contact-ph-name">
-                        </div>
-                        <div class="input-group">
-                            <label data-i18n="contact-email">Email</label>
-                            <input type="email" placeholder="What's your email address? *" required data-i18n-placeholder="contact-ph-email">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label data-i18n="contact-phone">Teléfono</label>
-                            <input type="tel" placeholder="What's your phone number?" data-i18n-placeholder="contact-ph-phone">
-                        </div>
-                        <div class="input-group">
-                            <label data-i18n="contact-subject">Asunto</label>
-                            <!-- En la imagen dice "What's your phone number?" en ambos, asumo que es un error de tipeo del diseño original. Lo corregimos a "Subject" -->
-                            <input type="text" placeholder="Subject" data-i18n-placeholder="contact-ph-subject">
-                        </div>
-                    </div>
-                    
-                    <div class="input-group">
-                        <label data-i18n="contact-message">Mensaje</label>
-                        <textarea rows="5" placeholder="Type your message..." required data-i18n-placeholder="contact-ph-message"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn" data-i18n="contact-submit">ENVIAR</button>
-                </form>
+                <form action="https://formspree.io/f/xbgleelo" method="POST" class="contact-form">
+    <div class="form-row">
+        <div class="input-group">
+            <label data-i18n="contact-name">Nombre</label>
+            <!-- Agregamos name="nombre" -->
+            <input type="text" name="nombre" placeholder="What's your name? *" required data-i18n-placeholder="contact-ph-name">
+        </div>
+        <div class="input-group">
+            <label data-i18n="contact-email">Email</label>
+            <!-- Agregamos name="email" -->
+            <input type="email" name="email" placeholder="What's your email address? *" required data-i18n-placeholder="contact-ph-email">
+        </div>
+    </div>
+    
+    <div class="form-row">
+        <div class="input-group">
+            <label data-i18n="contact-phone">Teléfono</label>
+            <!-- Agregamos name="telefono" -->
+            <input type="tel" name="telefono" placeholder="What's your phone number?" data-i18n-placeholder="contact-ph-phone">
+        </div>
+        <div class="input-group">
+            <label data-i18n="contact-subject">Asunto</label>
+            <!-- Agregamos name="asunto" -->
+            <input type="text" name="asunto" placeholder="Subject" data-i18n-placeholder="contact-ph-subject">
+        </div>
+    </div>
+    
+    <div class="input-group">
+        <label data-i18n="contact-message">Mensaje</label>
+        <!-- Agregamos name="mensaje" -->
+        <textarea name="mensaje" rows="5" placeholder="Type your message..." required data-i18n-placeholder="contact-ph-message"></textarea>
+    </div>
+    
+    <button type="submit" class="submit-btn" data-i18n="contact-submit">ENVIAR</button>
+</form>
             </div>
 
             <!-- Derecha: Redes Sociales -->
